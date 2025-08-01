@@ -10,12 +10,11 @@ export default async function decorate(block) {
   const aempublishurl = getMetadata('publishurl') || 'https://publish-p137117-e1400624.adobeaemcloud.com';
   const persistedquery = '/graphql/execute.json/EDS-Sessions/offerByPath';
   const contentPath = block.querySelector(':scope div:nth-child(1) > div a')?.textContent?.trim();
-  const variationname =
-    block
-      .querySelector(':scope div:nth-child(2) > div')
-      ?.textContent?.trim()
-      ?.toLowerCase()
-      ?.replace(' ', '_') || 'master';
+  const variationname = block
+    .querySelector(':scope div:nth-child(2) > div')
+    ?.textContent?.trim()
+    ?.toLowerCase()
+    ?.replace(' ', '_') || 'master';
   block.innerHTML = '';
   const isAuthor = document.querySelector('*[data-aue-resource]') !== null;
   const url = window?.location?.origin?.includes('author')
@@ -32,8 +31,8 @@ export default async function decorate(block) {
     .then((contentfragment) => {
       let offer = '';
       if (contentfragment.data) {
-       // offer = contentfragment.data[Object.keys(contentfragment.data.Offer)[0]].item;
-       offer = contentfragment.data.offerList.items[0];
+        // offer = contentfragment.data[Object.keys(contentfragment.data.Offer)[0]].item;
+        offer = contentfragment.data.offerList.items[0];
       }
       return offer;
     });
@@ -42,17 +41,17 @@ export default async function decorate(block) {
   block.innerHTML = `
   <div class='banner-content block' data-aue-resource=${itemId} data-aue-label="offer content fragment" data-aue-type="reference" data-aue-filter="cf">
 		<div class='banner-detail' style="background-image: linear-gradient(90deg,rgba(0,0,0,0.6), rgba(0,0,0,0.1) 80%) ,url(${
-      aemauthorurl + cfReq.heroImage?._path
-    });">
+  aemauthorurl + cfReq.heroImage?._path
+});">
         <p data-aue-prop="headline" data-aue-label="headline" data-aue-type="text" class='pretitle'>${
-          cfReq?.headline
-        }</p>
+  cfReq?.headline
+}</p>
         <p data-aue-prop="pretitle" data-aue-label="pretitle" data-aue-type="text" class='headline'>${
-          cfReq?.pretitle
-        }</p>
+  cfReq?.pretitle
+}</p>
         <p data-aue-prop="detail" data-aue-label="detail" data-aue-type="richtext" class='detail'>${
-          cfReq?.detail?.plaintext
-        }</p>
+  cfReq?.detail?.plaintext
+}</p>
 
       </div>
       <div class='banner-logo'>
