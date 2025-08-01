@@ -1,6 +1,5 @@
 
 export default function decorate(block) {
-
    <div id="cqcanvas">
     <div class="channel-html">
       <!--BEGIN > FIXED | HERO (DARK)-->
@@ -12060,6 +12059,6 @@ export default function decorate(block) {
       </div>
       <!--END > LEGAL-->
     </div>
-    <script type="text/javascript" src="test.js"></script>
+
   </div>
 }
