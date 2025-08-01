@@ -52,7 +52,9 @@
         "columns",
         "fragment",
         "quote",
-        "content-fragment"
+        "content-fragment",
+        "spark"
+
       ]
     }
   ]
